@@ -1,0 +1,20 @@
+{% extends 'myapp/base.html' %}
+    {% block content %}
+<div class="container">
+    <div class="row">
+
+         <div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">{{po.title}}</h4>
+  <p>{{po.desc}}</p>
+  <hr>
+
+</div>
+<div>
+
+    <a href="{% url 'home' %}" class="btn btn-outline-danger">Back To Home</a>
+</div>
+
+    </div>
+</div>
+    {% endblock %}
+	

@@ -1,0 +1,25 @@
+{% extends 'myapp/base.html' %}
+    {% block content %}
+<div class="container">
+    <h1 class="text-center text-warning">Website Technology</h1>
+     {% for m in po %}
+    <div class="row">
+
+
+         <div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">{{m.title}}</h4>
+  <p>{{m.desc|truncatechars:150}}</p>
+  <hr>
+
+             <a href="{% url 'onedata' m.id %}" class="btn btn-outline-primary">Read More</a>
+</div>
+
+    </div>
+
+    {% endfor %}
+
+
+
+</div>
+    {% endblock %}
+	

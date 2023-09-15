@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}">
+ <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+ <title>Document</title>
+</head>
+<body>
+ <div class="container-fluid bg-dark">
+  {% include 'myapp/navbar.html' %}
+ </div>
+ <div class="container">
+  <div class="row">
+   <div class="col-sm-12">
+    {% block msg %}
+    {% endblock msg %}
+   </div>
+  </div>
+
+  <div class="row">
+   {% block side %}
+   {% endblock side %}
+
+   {% block content %}
+   {% endblock content %}
+  </div>
+
+ </div>
+ <div class="container-fluid bg-dark m-5">
+ {% include 'myapp/footer.html' %}
+</div>
+ <script src="{% static 'myapp/js/jquery.js' %}"></script>
+ <script src="{% static 'myapp/js/popper.js' %}"></script>
+ <script src="{% static 'myapp/js/bootstrap.js' %}"></script>
+</body>
+</html>
