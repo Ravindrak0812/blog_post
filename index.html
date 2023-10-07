@@ -1,0 +1,34 @@
+{% extends 'myapp/base.html' %}
+    {% block content %}
+<div class="container">
+    <h1 class="text-center text-warning">Website Technology</h1>
+     {% for m in po %}
+    <div class="row">
+
+        <div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">{{m.title}}</h4>
+  <p>{{m.desc|truncatechars:250}}</p>
+  <hr>
+             <a href="{% url 'onedata' m.id %}" class="btn btn-outline-primary">Read More</a>
+</div>
+
+    </div>
+    {% endfor %}
+
+    <div>
+        <nav aria-label="Page navigation example">
+  <ul class="pagination">
+      {% if po.has_previous %}
+    <li class="page-item"><a class="page-link" href="?page={{po.previous_page_number}}">Previous</a></li>
+      {% endif %}
+    <li class="page-item"><a class="page-link" href="#">{{po.number}}</a></li>
+      {% if po.has_next %}
+    <li class="page-item"><a class="page-link" href="?page={{po.next_page_number}}">Next</a></li>
+      {% endif %}
+  </ul>
+</nav>
+    </div>
+
+</div>
+
+    {% endblock %}
